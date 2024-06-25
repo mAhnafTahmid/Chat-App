@@ -10,23 +10,36 @@ body {
   background-position: center;
 }
 
-/* dark mode looking scrollbar */
-::-webkit-scrollbar {
-  width: 8px !important;
-  background-color: transparent !important;
+/* Global dark mode looking scrollbar */
+html {
+  --scrollbar-color-thumb: #121212;
+  --scrollbar-color-track: #555;
 }
 
-::-webkit-scrollbar-track {
-  background: #555 !important;
+html,
+body,
+.root,
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color-thumb) var(--scrollbar-color-track);
 }
 
-::-webkit-scrollbar-thumb {
-  background: #121212 !important;
-  border-radius: 5px !important;
+*::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #242424 !important;
+*::-webkit-scrollbar-track {
+  background: var(--scrollbar-color-track);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-color-thumb);
+  border-radius: 5px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #242424;
 }
 
 /* SHAKE ANIMATION ON HORIZONTAL DIRECTION */
